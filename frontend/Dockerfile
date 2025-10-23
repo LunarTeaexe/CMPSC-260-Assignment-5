@@ -16,6 +16,10 @@ COPY . .
 # Build the production application
 RUN npm run build
 
+# Accept build argument 
+ARG VITE_API_URL 
+ENV VITE_API_URL=$VITE_API_URL
+
 # Stage 2: Serve with nginx
 FROM nginx:alpine
 
